@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sentinel.fraud.v1;
+
+service FraudDetector {
+  rpc Evaluate (FraudRequest) returns (FraudResponse);
+}
+
+message FraudRequest {
+  int64 amount_cents = 1;
+  // Includes the current distinct attempt in the rolling five-minute window.
+  int64 tx_count_5m = 2;
+}
+
+message FraudResponse {
+  string decision = 1;
+}

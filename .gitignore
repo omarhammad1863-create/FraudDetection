@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+fraud_pb2.py
+fraud_pb2_grpc.py
+.env
+*.log
